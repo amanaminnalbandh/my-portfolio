@@ -2,7 +2,7 @@
 
 A production-grade, enterprise-themed developer portfolio built to showcase full-stack web applications, cloud infrastructure architecture, and data science projects. 
 
-**Live Demo:** [aman-code.vercel.app](https://aman-code.vercel.app/)
+
 
 ---
 
