@@ -306,11 +306,8 @@ export default function Home() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {githubRepos.map((repo) => (
-                  <a
+                  <div
                     key={repo.id}
-                    href={repo.html_url}
-                    target="_blank"
-                    rel="noreferrer"
                     className="group rounded-2xl bg-[#111115] border border-white/10 hover:border-red-500/40 p-6 flex flex-col justify-between transition-all"
                   >
                     <div>
@@ -318,9 +315,34 @@ export default function Home() {
                         <span className="px-2.5 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-[11px] font-mono">
                           {repo.language || 'Code'}
                         </span>
-                        <span className="text-xs font-mono text-gray-500 group-hover:text-red-400">
-                          GitHub ↗
-                        </span>
+                        
+                        {/* ==================================================== */}
+                        {/* DYNAMIC LINKS: LIVE DEMO + GITHUB */}
+                        {/* ==================================================== */}
+                        <div className="flex items-center gap-3">
+                          {/* Only show "Live Demo" if the GitHub repo has a Website URL set */}
+                          {repo.homepage && (
+                            <a 
+                              href={repo.homepage} 
+                              target="_blank" 
+                              rel="noreferrer" 
+                              className="text-xs font-mono font-bold text-white hover:text-red-400 transition-colors"
+                            >
+                              Live Demo ↗
+                            </a>
+                          )}
+                          
+                          <a 
+                            href={repo.html_url} 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className="text-xs font-mono text-gray-500 hover:text-red-400 transition-colors"
+                          >
+                            GitHub ↗
+                          </a>
+                        </div>
+                        {/* ==================================================== */}
+                        
                       </div>
                       <h4 className="text-lg font-bold text-white group-hover:text-red-400 transition-colors mb-2">
                         {repo.name.replace(/-/g, ' ')}
@@ -332,7 +354,7 @@ export default function Home() {
                     <p className="text-[11px] font-mono text-gray-500 pt-3 border-t border-white/10">
                       Updated {new Date(repo.updated_at).toLocaleDateString()}
                     </p>
-                  </a>
+                  </div>
                 ))}
               </div>
             </div>
