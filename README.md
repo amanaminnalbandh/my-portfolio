@@ -30,3 +30,23 @@ To run this portfolio locally on your machine:
 ```bash
 git clone [https://github.com/amanaminnalbandh/my-portfolio.git](https://github.com/amanaminnalbandh/my-portfolio.git)
 cd my-portfolio
+
+2. Install dependencies
+
+Bash
+npm install
+3. Run the development server
+
+Bash
+npm run dev
+4. View the application
+Open http://localhost:3000 in your browser to see the live local preview.
+
+📫 Connect With Me
+Email: amanbuilds37@gmail.com
+
+GitHub Profile: github.com/amanaminnalbandh
+
+LinkedIn: linkedin.com/in/aman-amin-nalbandh
+
+"Professionally driven by innovation; personally driven by humanity."
